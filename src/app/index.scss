@@ -27,6 +27,22 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
   }
 }
 
+p {
+    color: red;
+}
+
+body {
+    background-color: aquamarine;
+}
+
+.form-control {
+    background-color: aqua;
+}
+
+#post-list li {
+    background-color: antiquewhite;
+}
+
 /**
  *  Do not remove the comments below. It's the markers used by gulp-inject to inject
  *  all your sass files automatically
