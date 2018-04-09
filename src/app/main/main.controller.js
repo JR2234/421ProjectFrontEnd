@@ -4,7 +4,6 @@ export class MainController {
 
       this.$http = $http;
       this.getMessages();
-
   }
     getMessages() {
         var vm = this;

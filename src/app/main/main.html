@@ -9,7 +9,13 @@
             <ul class="list-group">
                 <li class="list-group-item" ng-repeat="message in main.messages">
                     <p class="text-center">{{message.msg}}</p>
-                    <span>Posted by: {{message.user.username}}</span>
+                    <p>Posted by: {{message.user.username}}</p>
+                    <div class="input-group hidden">
+                        <textarea class="form-control custom-control" rows=3 style="resize:none" placeholder="Make a new comment...">
+                        </textarea>
+                        <span class="input-group-addon btn btn-primary">Post</span>
+                    </div>
+                    <span class="input-group-addon btn btn-primary" onclick="newComment(this)">New Comment</span>
                 </li>
             </ul>
         </div>
