@@ -28,19 +28,24 @@ $icon-font-path: "../../bootstrap-sass/assets/fonts/bootstrap/";
 }
 
 p {
-    color: red;
+    color: darkblue;
+}
+
+#text-color {
+    color: darkblue;
 }
 
 body {
-    background-color: aquamarine;
+    background: url(../assets/images/Blue-Background.jpg) no-repeat center center fixed;
+    //background-color: #57D9F1;
 }
 
 .form-control {
-    background-color: aqua;
+    background-color: #F2FCFE;
 }
 
 #post-list li {
-    background-color: antiquewhite;
+    background-color: #FFFBF3;
 }
 
 /**

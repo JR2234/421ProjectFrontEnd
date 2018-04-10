@@ -1,10 +1,10 @@
 <div class="container">
     <div class="input-group">
-        <textarea class="form-control custom-control" rows=3 style="resize:none" ng-model="main.message" placeholder="Make a new post..."></textarea>
+        <textarea id="text-color" class="form-control custom-control" rows=3 style="resize:none" ng-model="main.message" placeholder="Make a new post..."></textarea>
         <span class="input-group-addon btn btn-primary" ng-click="main.postMessage()">Post</span>
     </div>
     <div class="panel panel-default">
-        <div class="panel-heading text-center">Recent Posts</div>
+        <div id="text-color" class="panel-heading text-center">Recent Posts</div>
         <div class="panel-body">
             <ul id="post-list" class="list-group">
                 <li class="list-group-item" ng-repeat="message in main.messages">
@@ -15,7 +15,7 @@
                         </textarea>
                         <span class="input-group-addon btn btn-primary">Post</span>
                     </div>
-                    <span class="input-group-addon btn btn-primary" onclick="newComment(this)">New Comment</span>
+                    <span id="text-color" class="input-group-addon btn btn-primary" onclick="newComment(this)">New Comment</span>
                 </li>
             </ul>
         </div>
