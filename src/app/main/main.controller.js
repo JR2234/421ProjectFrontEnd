@@ -11,13 +11,19 @@ export class MainController {
             //Sort the messages chronologically
             var sortMessages = result.data;
             sortMessages.reverse();
-
             vm.messages = sortMessages;
         });
     }
 
     postMessage() {
         this.$http.post('http://localhost:5000/api/message', {msg: this.message, date: new Date().getTime()});
+        location.reload();
+    }
+
+    postComment(msg){
+        var messageId = msg.message._id; //id of the post being commented on
+        var username = msg.message.user.username;
+        this.$http.post('http://localhost:5000/api/comment', {msgId: messageId, username: username, cmt: this.comment, date: new Date().getTime()});
         location.reload();
     }
 }

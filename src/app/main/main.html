@@ -1,5 +1,5 @@
 <div class="container">
-    <div class="input-group">
+    <div class="input-group" style="margin-bottom:10px;">
         <textarea id="text-color" class="form-control custom-control" rows=3 style="resize:none" ng-model="main.message" placeholder="Make a new post..."></textarea>
         <span class="input-group-addon btn btn-primary" ng-click="main.postMessage()">Post</span>
     </div>
@@ -7,15 +7,20 @@
         <div id="text-color" class="panel-heading text-center">Recent Posts</div>
         <div class="panel-body">
             <ul id="post-list" class="list-group">
-                <li class="list-group-item" ng-repeat="message in main.messages">
+                <li class="list-group-item" ng-repeat="message in main.messages" style="margin-bottom:25px;">
                     <p class="text-center">{{message.msg}}</p>
                     <p>Posted by: {{message.user.username}}</p>
-                    <div class="input-group hidden">
-                        <textarea class="form-control custom-control" rows=3 style="resize:none" placeholder="Make a new comment...">
-                        </textarea>
-                        <span class="input-group-addon btn btn-primary">Post</span>
+                    <div class="input-group hidden" style="margin-bottom:10px;">
+                        <textarea class="form-control custom-control" rows=3 style="resize:none" ng-model="main.comment" placeholder="Make a new comment..."></textarea>
+                        <span class="input-group-addon btn btn-primary" ng-click="main.postComment(this)" >Post</span>
                     </div>
                     <span id="text-color" class="input-group-addon btn btn-primary" onclick="newComment(this)">New Comment</span>
+                    <ul class="list-group">
+                        <li class="list-group-item" ng-repeat="comments in message.comments">
+                            <p>{{comments.cmt}}</p>
+                            <p><strong>{{comments.username}}</strong></p>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
