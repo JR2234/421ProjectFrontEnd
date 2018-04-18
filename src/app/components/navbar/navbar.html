@@ -1,8 +1,8 @@
-<nav ng-controller="NavbarController as nav" class="navbar navbar-static-top navbar-inverse"  id="navbarColor">
+<nav ng-controller="NavbarController as nav" class="navbar navbar-static-top navbar-inverse black-text">
     <div class="container-fluid">
         <div class="navbar-header">
             <a class="navbar-brand" href="">
-                <span class="glyphicon glyphicon-home"></span> ShareBase
+                <span class="glyphicon glyphicon-home"></span> IST 421 Team 3
             </a>
         </div>
 
@@ -10,9 +10,8 @@
             <ul class="nav navbar-nav">
                 <li><a ng-href="#">Home</a></li>
                 <li ng-hide="nav.isAuthenticated()"><a ui-sref="auth">Login</a></li>
-                <li ng-show="nav.isAuthenticated()"><a ng-click="nav.logout()">Logout</a></li>
+                <li ng-show="nav.isAuthenticated()" style="cursor:pointer;"><a ng-click="nav.logout()">Logout</a></li>
             </ul>
-            <img src="../assets/images/SBImage.jpg" alt="SBImage" class="right"/>
         </div>
 
     </div>

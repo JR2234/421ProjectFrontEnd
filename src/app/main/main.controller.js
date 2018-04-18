@@ -16,14 +16,19 @@ export class MainController {
     }
 
     postMessage() {
-        this.$http.post('http://localhost:5000/api/message', {msg: this.message, date: new Date().getTime()});
-        location.reload();
+        if (this.message != undefined && this.message != ''){
+            console.log(this.message);
+            this.$http.post('http://localhost:5000/api/message', {msg: this.message, date: new Date().getTime()});
+            location.reload();
+        }
     }
 
     postComment(msg){
-        var messageId = msg.message._id; //id of the post being commented on
-        var username = msg.message.user.username;
-        this.$http.post('http://localhost:5000/api/comment', {msgId: messageId, username: username, cmt: this.comment, date: new Date().getTime()});
-        location.reload();
+        if (this.comment != undefined && this.comment != ''){
+            var messageId = msg.message._id; //id of the post being commented on
+            var username = msg.message.user.username;
+            this.$http.post('http://localhost:5000/api/comment', {msgId: messageId, username: username, cmt: this.comment, date: new Date().getTime()});
+            location.reload();
+        }
     }
 }
